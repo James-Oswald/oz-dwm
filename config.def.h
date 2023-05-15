@@ -100,8 +100,8 @@ static const Key keys[] = {
 	//Mod + b for "Browse"
 	{ MODKEY,             			XK_b, 	   spawn,          {.v = chromiumCmd } },
 	{ MODKEY,             			XK_c, 	   spawn,          {.v = vsCodeCmd } },
-	{ MODKEY, 						XK_s	   spawn,		   {.v = screenShotCmd } },
-	{ MODKEY|ShiftMask, 			XK_s	   spawn,		   {.v = screenShotCmd } },
+	{ MODKEY, 						XK_s,	   spawn,		   {.v = screenShotCmd } },
+	{ MODKEY|ShiftMask, 			XK_s,	   spawn,		   {.v = screenShotCmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
