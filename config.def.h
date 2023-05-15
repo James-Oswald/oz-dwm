@@ -20,8 +20,21 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { "#fae6a2", "#944548", "#fae6a2" },
 };
 
+static const char* const startLogo = "\uf04b";
+static const char* const chromeLogo = "\uf268";
+static const char* const codeLogo = "\ue322";
+static const char* const termLogo = "\uf120";
+
 /* tagging */
-static const char *tags[] = { "\uf268", "", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { 
+	startLogo, 
+	chromeLogo, 
+	codeLogo,
+	termLogo,
+	"4", 
+	"5",
+	"6"
+};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -30,7 +43,13 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Chromium",  NULL,       NULL,      1 << 1,       0,           -1 },
+	{ "chromium",  NULL,       NULL,      1 << 1,       0,           -1 },
+	{ "st",  		NULL,       NULL,     1 << 3,       0,           -1 },
+	{ "alacritty",  NULL,       NULL,     1 << 3,       0,           -1 },
+	{ "code",  		NULL,       NULL,     1 << 2,       0,           -1 },
+	{ "htop",  		NULL,       NULL,     1 << 0,       0,           -1 },
 };
 
 /* layout(s) */
