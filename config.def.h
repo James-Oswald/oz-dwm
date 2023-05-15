@@ -88,6 +88,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-b", "-m", dmenumon, "-fn", dmen
 static const char *termcmd[]  = { "st", NULL };
 static const char *chromiumCmd[] = { "chromium", NULL};
 static const char *vsCodeCmd[] = { "code", NULL};
+static const char *screenShotCmd[] = { "scrot", "-s", "~/screenshots/%Y%b%d-%H-%M-%S.png"};
 
 //My logic here is that dwm exclusives like quit and hide bar should get shiftmodded
 //Non-shiftmoded things should be quick commands like opening a terminal or browser
@@ -99,6 +100,8 @@ static const Key keys[] = {
 	//Mod + b for "Browse"
 	{ MODKEY,             			XK_b, 	   spawn,          {.v = chromiumCmd } },
 	{ MODKEY,             			XK_c, 	   spawn,          {.v = vsCodeCmd } },
+	{ MODKEY, 						XK_s	   spawn,		   {.v = screenShotCmd } },
+	{ MODKEY|ShiftMask, 			XK_s	   spawn,		   {.v = screenShotCmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

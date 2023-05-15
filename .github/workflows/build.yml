@@ -1,0 +1,21 @@
+on:
+  pull_request:
+    branches:
+    - master
+  push:
+    branches:
+    - master
+
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Get Required Packages 
+        run: sudo apt-get install -y libx11-dev xserver-xorg-dev xorg-dev
+
+      - name: Build
+        run: make all
