@@ -14,15 +14,20 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 
+static const char col_gold[] = "#fae6a2";
+static const char col_night[] = "#262e39";
+static const char col_mars[] = "#944548";
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { "#fae6a2", "#262e39", "#262e39" },
-	[SchemeSel]  = { "#fae6a2", "#944548", "#fae6a2" },
+	[SchemeNorm] = { col_gold, col_night, col_night },
+	[SchemeSel]  = { col_gold, col_mars, col_gold },
 };
 
+//Custom icons depend on FontAwesome being installed
 static const char* const startLogo = "\uf04b";
 static const char* const chromeLogo = "\uf268";
-static const char* const codeLogo = "\ue322";
+static const char* const codeLogo = "\uf121";
 static const char* const termLogo = "\uf120";
 
 /* tagging */
@@ -49,6 +54,7 @@ static const Rule rules[] = {
 	{ "st",  		NULL,       NULL,     1 << 3,       0,           -1 },
 	{ "alacritty",  NULL,       NULL,     1 << 3,       0,           -1 },
 	{ "code",  		NULL,       NULL,     1 << 2,       0,           -1 },
+	{ "Visual Studio Code", NULL,NULL,    1 << 2,       0,           -1 },
 	{ "htop",  		NULL,       NULL,     1 << 0,       0,           -1 },
 };
 
@@ -60,8 +66,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "<>=",      NULL },    /* no layout function means floating behavior */
+	{ "[T]",      tile },    /* first entry is default */
+	{ "[F]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -78,7 +84,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-b" "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-b", "-m", dmenumon, "-fn", dmenufont, "-nb", col_night, "-nf", col_gold, "-sb", col_mars, "-sf", col_gold, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *chromiumCmd[] = { "chromium", NULL};
 static const char *vsCodeCmd[] = { "code", NULL};
