@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "monospace:size=15" };
+static const char dmenufont[]       = "monospace:size=15";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -39,9 +39,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "Tile",      tile },    /* first entry is default */
+	{ "Float",      NULL },    /* no layout function means floating behavior */
+	{ "Mono",      monocle },
 };
 
 /* key definitions */
@@ -60,6 +60,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *chromiumCmd[] = { "chromium", NULL};
+static const char *vsCodeCmd[] = { "code", NULL};
 
 //My logic here is that dwm exclusives like quit and hide bar should get shiftmodded
 //Non-shiftmoded things should be quick commands like opening a terminal or browser
@@ -70,6 +71,7 @@ static const Key keys[] = {
 	{ MODKEY,			            XK_Return, spawn,          {.v = termcmd } },
 	//Mod + b for "Browse"
 	{ MODKEY,             			XK_b, 	   spawn,          {.v = chromiumCmd } },
+	{ MODKEY,             			XK_c, 	   spawn,          {.v = vsCodeCmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
