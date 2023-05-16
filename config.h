@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include "dwm.h"
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -25,17 +27,18 @@ static const char *colors[][3]      = {
 };
 
 //Custom icons depend on FontAwesome being installed
+/*
 static const char* const startLogo = "\uf04b";
 static const char* const chromeLogo = "\uf268";
 static const char* const codeLogo = "\uf121";
 static const char* const termLogo = "\uf120";
-
+*/
 /* tagging */
 static const char *tags[] = { 
-	startLogo, 
-	chromeLogo, 
-	codeLogo,
-	termLogo,
+	"\uf04b", 
+	"\uf268", 
+	"\uf121",
+	"\uf120",
 	"4", 
 	"5",
 	"6"
@@ -85,10 +88,10 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-b", "-m", dmenumon, "-fn", dmenufont, "-nb", col_night, "-nf", col_gold, "-sb", col_mars, "-sf", col_gold, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 static const char *chromiumCmd[] = { "chromium", NULL};
 static const char *vsCodeCmd[] = { "code", NULL};
-static const char *screenShotCmd[] = { "scrot", "-s", "~/screenshots/%Y%b%d-%H-%M-%S.png"};
+static const char *screenShotCmd[] = { "scrot", "-s", "~/screenshots/%Y%b%d-%H-%M-%S.png", NULL};
 
 //My logic here is that dwm exclusives like quit and hide bar should get shiftmodded
 //Non-shiftmoded things should be quick commands like opening a terminal or browser
