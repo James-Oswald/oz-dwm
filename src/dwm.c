@@ -1939,7 +1939,7 @@ main(int argc, char *argv[])
 	scan();
 	//Make install will place the wallpaper here from source
 	if(system("feh --bg-scale ~/.ozWallpaper") != 0){
-		die("failed to set background");
+		printf("failed to set background");
 	};
 	run();
 	cleanup();
