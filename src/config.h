@@ -91,7 +91,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-b", "-m", dmenumon, "-fn", dmen
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *chromiumCmd[] = { "chromium", NULL};
 static const char *vsCodeCmd[] = { "code", NULL};
-static const char *screenShotCmd[] = { "scrot", "-s", "~/screenshots/%Y%b%d-%H-%M-%S.png", NULL};
+static const char *screenShotCmd[] = { "scrot", "-s", "/home/james/screenshots/%Y%b%d-%H-%M-%S.png", NULL};
 
 //My logic here is that dwm exclusives like quit and hide bar should get shiftmodded
 //Non-shiftmoded things should be quick commands like opening a terminal or browser
