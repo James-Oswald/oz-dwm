@@ -17,5 +17,8 @@ jobs:
       - name: Get Required Packages 
         run: sudo apt-get install -y libx11-dev xserver-xorg-dev xorg-dev
 
+      - name: Configure CMake
+        run: cmake -DCMAKE_BUILD_TYPE=Release 
+
       - name: Build
-        run: make all
+        run: make
