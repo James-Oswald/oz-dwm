@@ -53,6 +53,7 @@ target_sources(dwm PRIVATE
     src/dwm.c
     src/util.h
     src/util.c
+    #src/gaps.c
 )
 
 install(TARGETS dwm DESTINATION /usr/local/bin)
