@@ -1,6 +1,6 @@
 
 cmake_minimum_required(VERSION 3.16)
-project("oz-dwm" VERSION 0.2.0)
+project("oz-dwm" VERSION 0.2.1)
 
 # Config ======================================================================
 
@@ -53,6 +53,7 @@ target_sources(dwm PRIVATE
     src/dwm.c
     src/util.h
     src/util.c
+    #src/gaps.c
 )
 
 install(TARGETS dwm DESTINATION /usr/local/bin)
