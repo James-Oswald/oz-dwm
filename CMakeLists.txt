@@ -9,13 +9,13 @@ set(C_STANDARD_REQUIRED ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 set(CPPFLAGS 
+    "-DXINERAMA"
     "-D_DEFAULT_SOURCE"
     "-D_BSD_SOURCE"
     "-D_XOPEN_SOURCE=700L"
     "-DVERSION=\""
     ${VERSION}
-    "\""
-    ${XINERAMAFLAGS})
+    "\"")
 
 set(CFLAGS 
     "-std=c99"
@@ -37,7 +37,13 @@ add_executable(dwm)
 find_package(X11 REQUIRED)
 find_package(Freetype REQUIRED)
 
-target_link_libraries(dwm ${X11_LIBRARIES} ${FREETYPE_LIBRARIES} X11::Xft)
+target_link_libraries(dwm 
+    ${X11_LIBRARIES} 
+    ${FREETYPE_LIBRARIES} 
+    X11::Xft 
+    X11::Xinerama
+)
+
 include_directories(${X11_INCLUDE_DIR} ${FREETYPE_INCLUDE_DIRS})
 
 add_compile_definitions(
