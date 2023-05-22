@@ -1,4 +1,8 @@
 
+//I Always want XINERAMA and do not like the compiler flags 
+#ifndef XINERAMA
+#define XINERAMA
+#endif
 
 #define xstr(a) str(a)
 #define str(a) #a
