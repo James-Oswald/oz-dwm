@@ -3,6 +3,10 @@
 This is my custom fork of suckless' DWM.
 
 ## Dependancies
+```bash
+sudo apt install feh libx11 fontawesome
+```
+
 * feh: for background
 * libx11: for obvious reasons
 * fontawesome: for emojis on the status bar
