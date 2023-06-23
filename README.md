@@ -2,14 +2,24 @@
 
 This is my custom fork of suckless' DWM.
 
-## Dependancies
-```bash
-sudo apt install feh libx11 fontawesome
-```
-
+## Dependancies & Install
 * feh: for background
 * libx11: for obvious reasons
 * fontawesome: for emojis on the status bar
+* cmake: build
+
+Clean install and build
+```bash
+sudo apt install feh libx11 fontawesome cmake
+git clone https://github.com/James-Oswald/oz-dwm.git
+#cmake build 
+mkdir oz-dwm/build
+cd oz-dwm/build
+cmake ..
+make
+
+#add "exec dwm" to your .xinitrc to start on x server startup
+```
 
 ## Defaults and Keys
 * Terminal (Mod4 + Enter): Alacritty
